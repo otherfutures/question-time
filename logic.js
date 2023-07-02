@@ -20,13 +20,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to calculate and display remaining runs and months
-    function displayRemainingInfo(totalQuestions, numQuestions) {
-        const runs = Math.ceil(totalQuestions / numQuestions);
-        const months = Math.ceil(runs / 4);
-        remainingRuns.textContent = `Remaining Runs: ${runs}`;
-        remainingMonths.textContent = `Remaining Months: ${months}`;
-    }
+    // // Function to calculate and display remaining runs and months
+    // function displayRemainingInfo(totalQuestions, numQuestions) {
+    //     const runs = Math.ceil(totalQuestions / numQuestions);
+    //     const months = Math.ceil(runs / 4);
+    //     remainingRuns.textContent = `Remaining Runs: ${runs}`;
+    //     remainingMonths.textContent = `Remaining Months: ${months}`;
+    // }
 
     // Function to format and display the loaded questions
     function displayQuestions(questions) {
