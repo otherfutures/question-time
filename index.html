@@ -3,6 +3,7 @@
 
 <head>
     <title>Question Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             text-align: center;
@@ -22,21 +23,24 @@
         }
 
         #question-container ol {
-            padding-left: 5%;
+            padding-left: 30px;
         }
 
         #question-container li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             counter-increment: question-counter;
         }
 
         #question-container li input[type="checkbox"] {
             margin-right: 10px;
+            width: 20px;
         }
 
         #question-container li span {
             margin-left: 10px;
+            flex: 1;
+            min-width: 0; /* Allow text to wrap */
         }
 
         #question-container li span::before {
