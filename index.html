@@ -36,26 +36,56 @@
         }
 
         #question-container li span {
-            margin-left: 0px;
+            margin-left: 10px;
         }
 
         #question-container li span::before {
             content: counter(question-counter) '. ';
             margin-right: 10px;
+        }
 
+        #remaining-runs {
+            margin-top: 20px;
+        }
+
+        /* Media queries for different viewports */
+        @media screen and (max-width: 768px) {
+
+            /* Adjust styles for smaller screens */
+            #question-container {
+                max-width: 400px;
+            }
+
+            #question-container li span {
+                margin-left: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            /* Adjust styles for mobile devices */
+            #question-container {
+                max-width: 300px;
+            }
+
+            #question-container li span {
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Ask a Question</h1>
+    <h1>Question Bank</h1>
     <form class="question-form js-questionForm" action="#">
         <label for="num-questions-input">Number of Questions:</label>
-        <input type="number" id="num-questions-input" value="5" min="1">
+        <input type="number" id="num-questions-input" value="20" min="1">
         <button type="submit">Load Questions</button>
     </form>
     <div id="question-container"></div>
-  
+    <!-- <div id="remaining-runs"></div>
+    <div id="remaining-months"></div> -->
+
     <script src="logic.js"></script>
 </body>
 
