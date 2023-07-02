@@ -42,7 +42,7 @@
 
         #question-container li span::before {
             content: counter(question-counter) '. ';
-            margin-right: 10px;
+            margin-right: 5px;
 
         }
     </style>
@@ -52,7 +52,7 @@
     <h1>Question Bank</h1>
     <form class="question-form js-questionForm" action="#">
         <label for="num-questions-input">Number of Questions:</label>
-        <input type="number" id="num-questions-input" value="20" min="1">
+        <input type="number" id="num-questions-input" value="5" min="1">
         <button type="submit">Load Questions</button>
     </form>
     <div id="question-container"></div>
