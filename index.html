@@ -17,39 +17,33 @@
 
         #question-container {
             text-align: left;
-            margin-left: 10%;
-            margin-right: 10%;
-            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
         }
 
         #question-container ol {
-            padding-left: 30px;
+            padding-left: 70px;
         }
 
         #question-container li {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             counter-increment: question-counter;
         }
 
         #question-container li input[type="checkbox"] {
             margin-right: 10px;
-            width: 20px;
         }
 
         #question-container li span {
-            margin-left: 10px;
-            flex: 1;
-            min-width: 0; /* Allow text to wrap */
+            margin-left: 0px;
         }
 
         #question-container li span::before {
             content: counter(question-counter) '. ';
             margin-right: 10px;
-        }
 
-        #remaining-runs {
-            margin-top: 20px;
         }
     </style>
 </head>
