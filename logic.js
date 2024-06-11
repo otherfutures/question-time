@@ -17,17 +17,9 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // // Function to calculate and display remaining runs and months
-    // function displayRemainingInfo(totalQuestions, numQuestions) {
-    //     const runs = Math.ceil(totalQuestions / numQuestions);
-    //     const months = Math.ceil(runs / 4);
-    //     remainingRuns.textContent = `Remaining Runs: ${runs}`;
-    //     remainingMonths.textContent = `Remaining Months: ${months}`;
-    // }
-    
     // Function to format and display the loaded questions
     function displayQuestions(questions) {
-        const questionList = questions.map((question, index) => `<li><input type="checkbox"><span>${question}</span></li>`).join('');
+        const questionList = questions.map((question) => `<li><input type="checkbox"><span>${question}</span></li>`).join('');
         questionContainer.innerHTML = `<ol id="question-list">${questionList}</ol>`;
     }
 
@@ -41,4 +33,23 @@ window.addEventListener('DOMContentLoaded', () => {
         const questions = await loadQuestions(numQuestions);
         displayQuestions(questions);
     });
+
+    // Function to detect curl requests and return questions
+    function isCurlRequest() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return /curl/i.test(userAgent);
+    }
+
+    // Function to handle curl request
+    async function handleCurlRequest() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const numQuestions = urlParams.get('numQuestions') ? parseInt(urlParams.get('numQuestions'), 10) : 5;
+        const questions = await loadQuestions(numQuestions);
+        questions.forEach(question => console.log(`- ${question}`));
+    }
+
+    // If it's a curl request, handle it
+    if (isCurlRequest()) {
+        handleCurlRequest();
+    }
 });
