@@ -1,9 +1,6 @@
-// Load the questions and display remaining runs and months
 window.addEventListener('DOMContentLoaded', () => {
     const questionForm = document.querySelector('.js-questionForm');
     const questionContainer = document.getElementById('question-container');
-    const remainingRuns = document.getElementById('remaining-runs');
-    const remainingMonths = document.getElementById('remaining-months');
 
     // Function to load questions from the text file
     async function loadQuestions(numQuestions) {
@@ -27,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //     remainingRuns.textContent = `Remaining Runs: ${runs}`;
     //     remainingMonths.textContent = `Remaining Months: ${months}`;
     // }
-
+    
     // Function to format and display the loaded questions
     function displayQuestions(questions) {
         const questionList = questions.map((question, index) => `<li><input type="checkbox"><span>${question}</span></li>`).join('');
@@ -41,14 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const numQuestions = parseInt(numQuestionsInput.value, 10);
 
         // Load questions and display them
-        const response = await fetch('questions.txt');
-        const text = await response.text();
-        const allQuestions = text.trim().split('\n');
-        const totalQuestions = allQuestions.length;
         const questions = await loadQuestions(numQuestions);
         displayQuestions(questions);
-
-        // Display remaining runs and months
-        displayRemainingInfo(totalQuestions, numQuestions);
     });
 });
