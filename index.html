@@ -16,7 +16,7 @@
         }
 
         #num-questions-input {
-            max-width: 40px
+            max-width: 40px;
         }
 
         #question-container {
@@ -25,10 +25,6 @@
             margin-right: 10%;
             max-width: 80%;
         }
-
-/*         #question-container ol {
-            padding-left: 70px;
-        } */
 
         #question-container li {
             display: flex;
@@ -46,7 +42,6 @@
             margin-left: 10px;
             flex: 1;
             min-width: 0;
-            /* Allow text to wrap */
             font-size: 16px;
         }
 
@@ -54,10 +49,6 @@
             content: counter(question-counter) '. ';
             margin-right: 10px;
             font-size: 16px;
-        }
-
-        #remaining-runs {
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -70,8 +61,6 @@
         <button type="submit">Load</button>
     </form>
     <div id="question-container"></div>
-    <!-- <div id="remaining-runs"></div>
-    <div id="remaining-months"></div> -->
 
     <script src="logic.js"></script>
 </body>
